@@ -1,0 +1,94 @@
+<<<<<<< HEAD
+# Node modules
+node_modules/
+
+=======
+>>>>>>> b9acf88c1890f9d8f388c5776db706b512cca7b2
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+<<<<<<< HEAD
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build directories
+dist/
+build/
+.cache/
+.next/
+out/
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/
+.idea/
+=======
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+>>>>>>> b9acf88c1890f9d8f388c5776db706b512cca7b2
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+<<<<<<< HEAD
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Temporary files
+tmp/
+temp/
+
+# Uploads and generated files
+uploads/
+public/uploads/
+*.zip
+*.tar.gz
+
+# TypeScript build output
+*.tsbuildinfo
+
+# Optional lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Local database or cache files
+*.sqlite
+*.db
+*.cache
+=======
+>>>>>>> b9acf88c1890f9d8f388c5776db706b512cca7b2
