@@ -35,6 +35,8 @@ import PrivacyPolicy from "./components/PrivacyPolicy.jsx";
 import TermsAndConditions from "./components/TermsAndConditions.jsx";
 import Footer from "./components/Footer.jsx";
 
+// import Trips from './pages/'
+
 // Admin imports
 import AdminLayout from "./Admin/AdminLayout";
 import AdminUsers from "./Admin/pages/AdminUsers.jsx";
@@ -105,6 +107,7 @@ function AppContent() {
       <ScrollToTop />
       <Routes>
         {/* Public Pages */}
+        {/* <Route path="/Trips" element={<Trips/>}/> */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/alltrips" element={<AllTripsPage />} />

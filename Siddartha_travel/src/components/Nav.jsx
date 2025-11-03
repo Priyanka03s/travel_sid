@@ -10,7 +10,7 @@ function Nav() {
   const [userRole, setUserRole] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [unreadNotifications, setUnreadNotifications] = useState(0);
+  const [unreadNotifications, ] = useState(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const location = useLocation();
   const navigate = useNavigate();
@@ -129,7 +129,7 @@ function Nav() {
               <FiInfo className="mr-1" />
               <span className="hidden xl:inline">About</span>
             </Link>
-            <Link to="/alltrips" className={linkClasses("/alltrips")}>
+            <Link to="/alltrips" className={linkClasses("/trips")}>
               <span className="hidden xl:inline">All Trips</span>
               <span className="xl:hidden">Trips</span>
             </Link>
@@ -221,7 +221,7 @@ function Nav() {
             <Link to="/about" className={linkClasses("/about")}>
               <FiInfo className="h-5 w-5" />
             </Link>
-            <Link to="/alltrips" className={linkClasses("/alltrips")}>
+            <Link to="/trips" className={linkClasses("/trips")}>
               <FiMap className="h-5 w-5" />
             </Link>
             
@@ -265,7 +265,7 @@ function Nav() {
               </>
             )}
             
-            {!isAuthenticated && (
+            {/* {!isAuthenticated && (
               <>
                 <Link to="/login" className={secondaryButtonClasses}>
                   <FiUser className="h-5 w-5" />
@@ -274,7 +274,7 @@ function Nav() {
                   <FiPlus className="h-5 w-5" />
                 </Link>
               </>
-            )}
+            )} */}
           </div>
           
           {/* Mobile menu button */}
@@ -303,7 +303,7 @@ function Nav() {
           {/* About Page Link for Mobile */}
           <Link
             to="/about"
-            className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+            className={`px-3 py-2 rounded-md text-base font-medium flex items-center ${
               isActive("/about") 
                 ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                 : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -315,9 +315,9 @@ function Nav() {
           </Link>
           
           <Link
-            to="/alltrips"
-            className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
-              isActive("/alltrips") 
+            to="/trips"
+            className={`px-3 py-2 rounded-md text-base font-medium flex items-center ${
+              isActive("/trips") 
                 ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                 : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
             }`}
@@ -333,7 +333,7 @@ function Nav() {
               {userRole === 'host' && (
                 <Link
                   to="/dashboard"
-                  className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                     isActive("/dashboard") 
                       ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                       : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -348,7 +348,7 @@ function Nav() {
               {/* Payment Links for Mobile */}
               <Link
                 to="/user/payments"
-                className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                   isActive("/user/payments") 
                     ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                     : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -363,7 +363,7 @@ function Nav() {
                 <>
                   <Link
                     to="/host/payments"
-                    className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                    className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                       isActive("/host/payments") 
                         ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                         : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -375,7 +375,7 @@ function Nav() {
                   </Link>
                   <Link
                     to="/create-trip"
-                    className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                    className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                       isActive("/create-trip") 
                         ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                         : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -387,7 +387,7 @@ function Nav() {
                   </Link>
                   <Link
                     to="/event-form"
-                    className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                    className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                       isActive("/event-form") 
                         ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                         : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -399,7 +399,7 @@ function Nav() {
                   </Link>
                   <Link
                     to="/adventure-form"
-                    className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                    className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                       isActive("/adventure-form") 
                         ? (isScrolled ? 'bg-red-800 text-white' : 'bg-gray-300 text-black')
                         : (isScrolled ? 'text-white hover:bg-red-600' : 'text-black hover:bg-gray-200')
@@ -434,7 +434,7 @@ function Nav() {
                   handleLogout();
                   toggleMenu();
                 }}
-                className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                className={`w-full text-left px-3 py-2 rounded-md text-base font-medium flex items-center ${
                   isScrolled 
                     ? 'bg-white text-red-600 hover:bg-gray-100' 
                     : 'bg-red-600 text-white hover:bg-red-700'
@@ -448,7 +448,7 @@ function Nav() {
             <div className="mt-4 space-y-2">
               <Link
                 to="/login"
-                className={`block px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                className={`block px-3 py-2 rounded-md text-base font-medium items-center ${
                   isScrolled 
                     ? 'text-white hover:bg-red-600' 
                     : 'text-black hover:bg-gray-200'
@@ -460,7 +460,7 @@ function Nav() {
               </Link>
               <Link
                 to="/register"
-                className={`block w-full px-3 py-2 rounded-md text-base font-medium flex items-center ${
+                className={`w-full px-3 py-2 rounded-md text-base font-medium flex items-center ${
                   isScrolled 
                     ? 'bg-white text-red-600 hover:bg-gray-100' 
                     : 'bg-red-600 text-white hover:bg-red-700'

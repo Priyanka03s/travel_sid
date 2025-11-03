@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext';
 import { 
   fetchPublishedTrips, 
   fetchPublishedEvents, 
@@ -46,7 +45,7 @@ const SearchIcon = () => (
     ></path>
   </svg>
 );
-
+console.log("run")
 // Main Search Bar Component
 const SearchBar = ({ searchTerm, searchType, onSearchTermChange, onSearchTypeChange }) => {
   const handleSearchTypeClick = (type) => {
@@ -753,7 +752,6 @@ const FilterPanel = ({
 const AllTripsPage = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { currentUser } = useAuth();
   
   // Get state from Redux
   const { trips, events, schools, loading, error } = useSelector(state => state.items);
